@@ -1,0 +1,28 @@
+function findOutlier(integers){
+  evenCount = 0;
+  oddCount = 0;
+  for(i = 0; i<integers.length; i++) {
+      if (integers[i] % 2 == 0) {
+          evenCount++
+      } else {
+          oddCount++
+      }
+  }
+  
+ 
+ 
+  
+  if (evenCount > 1) {
+      for (j=0; j<integers.length; j++) {
+        if (integers[j] % 2 != 0) {
+          return integers[j]
+        }
+      }
+  } else if (oddCount > 1) {
+   for (k=0; k<integers.length; k++) {
+        if (integers[k] % 2 == 0) {
+          return integers[k]
+        }
+      }
+  }
+}
