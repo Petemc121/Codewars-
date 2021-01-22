@@ -1,0 +1,10 @@
+var countBits = function(n) {
+  toString = n.toString(2)
+  count = 0
+  for(i=0; i<toString.length; i++) {
+    if (toString.charAt(i) == "1") {
+      count++
+    }
+  }
+  return count;
+};
