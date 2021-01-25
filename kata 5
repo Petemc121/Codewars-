@@ -1,0 +1,14 @@
+function findNb(m) {
+  volume = 0
+  n=0
+  for (i=0;volume<m;i++) {
+    volume += Math.pow(i,3);
+    n++
+  }
+  
+  if(volume == m) {
+    return n -1
+  } else {
+  return (-1);
+    }
+}
