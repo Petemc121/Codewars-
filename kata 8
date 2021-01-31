@@ -1,0 +1,21 @@
+function spinWords(string){
+let split = string.split(" ");
+ let answer = []
+  
+  for(var i = 0; i<split.length ;i++) {
+    if(split[i].length >= 5) {
+      let arrayed = split[i].split("")
+      let reversed = arrayed.reverse();
+      let merged = reversed.join("")
+      answer.push(merged)
+    } else {
+      
+      answer.push(split[i])
+
+    }
+    
+  }
+   var finalAnswer  = answer.join(" ")
+  return finalAnswer;
+  
+}
