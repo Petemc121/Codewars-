@@ -9,10 +9,13 @@ function solution(list){
      {
        let j = i + 1;
        let start = i
+      
        while (list[j] === list[j-1]+1) {
          j++
-         
+         list.splice(j,1) 
        }
+       list[i] = i + "-" + j
+       newArray.push(list[i])
        
      } else {
        newArray.push(list[i]);
@@ -21,5 +24,7 @@ function solution(list){
   }
   
   console.log(newArray);
+  console.log(list);
   
   }
+
