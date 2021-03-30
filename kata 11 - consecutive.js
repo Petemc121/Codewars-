@@ -2,29 +2,30 @@
 function solution(list){
   
 
-  let newArray = []
+  
  for(let i = 0;i<list.length;i++) {
    
    if (list[i] === list[i+1]-1 && list[i] != list[i-1]+1)
      {
-       let j = i + 1;
-       let start = i
       
-       while (list[j] === list[j-1]+1) {
-         j++
-         list.splice(j,1) 
-       }
-       list[i] = i + "-" + j
-       newArray.push(list[i])
+       let first= i;
+       let second = i + 1;
        
-     } else {
-       newArray.push(list[i]);
-     }
+       while (list[second] - list[first] === 1 || list[second] - list[first] == list[second]) {
+         second++
+         first++
+         list.splice(second,1); 
+         
+       }
+       list[i] = list[i] + "-" + list[second];
+       
+     } 
  
   }
   
-  console.log(newArray);
-  console.log(list);
+
+ return list
   
   }
+
 
