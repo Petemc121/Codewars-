@@ -1,8 +1,8 @@
-//A format for expressing an ordered list of integers is to use a comma separated list of either individual integers or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17" Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
 function solution(list){
   
 let markedArray = [];
 let finalArray = [];
+;
   
  for(let i = 0;i<list.length;i++) {
    
@@ -13,7 +13,7 @@ let finalArray = [];
        let first= i;
        let second = i + 1;
        let diff = list[first]-list[second];
-       let start = list[i];
+       
       
        
        while (diff === 1 ){
@@ -38,8 +38,9 @@ let finalArray = [];
  console.log(markedArray);
     
    for(let x = 0; x < markedArray.length; x++) {
+     let start;
      if(typeof markedArray[x] ==="string" && typeof markedArray[x-1] !=="string") {
-       markedArray[x] === start
+      start = markedArray[x]
    if(typeof markedArray[x] === "string") {
       
      markedArray.splice(x,1)
@@ -55,5 +56,7 @@ let finalArray = [];
  
 
  console.log(markedArray);
+  
+  }
   
   }
