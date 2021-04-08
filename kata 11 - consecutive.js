@@ -36,27 +36,39 @@ let finalArray = [];
   }
   
  console.log(markedArray);
+  
+   let start;
+  let end;
     
    for(let x = 0; x < markedArray.length; x++) {
-     let start;
-     if(typeof markedArray[x] ==="string" && typeof markedArray[x-1] !=="string") {
-      start = markedArray[x]
-   if(typeof markedArray[x] === "string") {
+    
+     if(typeof markedArray[x] ==="string" && typeof markedArray[x-1] !=="string") 
+     {
+       
+     console.log('splice')
+       start = markedArray[x];
+        markedArray.splice(x,1)
+ 
+       
+       
+      } else 
+     
+   if(typeof markedArray[x] === "string" && typeof markedArray[x+1] ==="string") 
+   {
       
      markedArray.splice(x,1)
      console.log('splice')
      x--
      
-    
-   } else {
-     console.log(typeof markedArray[x])
-     console.log(markedArray[x])
-   }
+     } else if (typeof markedArray[x] ==="string" && typeof markedArray[x+1] !=="string") {
+       end = markedArray[x];
+       markedArray[x] = start + "-" + end;
+         
      }
+     }
+  console.log(markedArray);
  
+  
+  }
+  
 
- console.log(markedArray);
-  
-  }
-  
-  }
