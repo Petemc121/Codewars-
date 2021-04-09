@@ -2,7 +2,10 @@ function solution(list){
   
 let markedArray = [];
 let finalArray = [];
-;
+  const initList = list;
+  
+  console.log(initList);
+
   
  for(let i = 0;i<list.length;i++) {
    
@@ -46,7 +49,7 @@ let finalArray = [];
      {
        
      console.log('splice')
-       start = markedArray[x];
+       start = initList[x];
         markedArray.splice(x,1)
  
        
@@ -61,7 +64,7 @@ let finalArray = [];
      x--
      
      } else if (typeof markedArray[x] ==="string" && typeof markedArray[x+1] !=="string") {
-       end = markedArray[x];
+       end = initList[x+2];
        markedArray[x] = start + "-" + end;
          
      }
