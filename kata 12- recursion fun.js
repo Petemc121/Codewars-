@@ -1,22 +1,34 @@
-// this wasn't actually a problem set by code wars. Just me using recursion to reverse any input string. 
+//find the largest common divisor between two inputs
 
-let reversed = [];
-
-function reverse(string) {
-  let n = reversed.length;
-
-  if (n === string.length) {
-    return;
+function mygcd(x,y){
+  
+  if (x == 1 || y == 1) 
+    {
+      return 1;
+    }
+  
+   if (x > y) 
+   {
+     if(x % y == 0) {
+       return y;
+     } else {
+       return mygcd(x,y-1);
+     }
+   }
+else if (y > x) 
+  {
+    if (y % x == 0) 
+      {
+        return x;
+      } else {
+        return mygcd(x-1, y);
+      }
   }
+  
+    }
+       
+  
+      
 
-  reversed.push(string[string.length - 1 - n]);
-  reverse(string);
-}
 
-reverse("Recursion");
-
-join = reversed.join("");
-
-var stringify = join.toString("");
-
-console.log(stringify);
+ 
