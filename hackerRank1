@@ -1,0 +1,21 @@
+function diagonalDifference(arr) {
+    let forwardDiagonal = []
+    let backwardDiagonal = []
+   let backDiagonalSum = 0
+   let forwardDiagonalSum = 0
+    
+    for (let i = 0; i < arr.length; i++)
+    {
+        for (let j = 0; j < arr[i].length; j++)
+        {
+            if (i === j) 
+            {backDiagonalSum += arr[i][j]
+            backwardDiagonal.push(arr[i][j])}
+           
+           if (i + j === arr[i].length - 1)
+               {forwardDiagonalSum += arr[i][j]
+            forwardDiagonal.push(arr[i][j])}
+           
+        }
+    }
+    
